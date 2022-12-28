@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -33,7 +34,7 @@ public class AddcustomerPage {
     By rdFemaleGneder = By.id("Gender_Female");
 
     By txtDob = By.id("DateOfBirth");
-    By istax_except= By.id("//input[@id='IsTaxExempt']");
+    By istax_except = By.id("//input[@id='IsTaxExempt']");
     By txtCompanyname = By.id("Company");
 
     By txtCustomerRoles = By.id("SelectedCustomerRoleIds_taglist");        //*************rolles**********//
@@ -104,30 +105,40 @@ public class AddcustomerPage {
         } catch (Exception e) {
 
 
-                throw new RuntimeException("date was not matched " + e.getMessage());
+            throw new RuntimeException("date was not matched " + e.getMessage());
 
 
         }
     }
-    public void istaxecept(String tax)
-    {
-        if(tax.equals("Yes"))
-        {
+
+    public void istaxecept(String tax) {
+        if (tax.equals("Yes")) {
             ldriver.findElement(istax_except).click();
         }
 
     }
-    public void newsLetter(String letter)
-    {
-        try{
-            //  By txtNewsletter = By.id("SelectedNewsletterSubscriptionStoreIds_taglist");
-            By news_letter = By.xpath("//ul[@id='SelectedNewsletterSubscriptionStoreIds_taglist']/descendant::span[contains(text(),'"+letter+"')]");
-            ldriver.findElement(news_letter).click();
-        }catch (Exception e)
-        {
-         throw new RuntimeException("newsletter selection error "+e.getMessage());
+
+    public void newsLetter(String letter) {
+        try {
+            JavascriptExecutor js = (JavascriptExecutor)ldriver;
+            By txtNewsletter = By.xpath("//div[@class='input-group']/descendant::select[@id='SelectedNewsletterSubscriptionStoreIds']");
+            WebElement customerType = ldriver.findElement(txtNewsletter);
+//            new WebDriverWait(ldriver, Duration.ofSeconds(60)).until(
+//                    ExpectedConditions.elementToBeClickable(customerType));
+//              customerType.click();
+            js.executeScript("arguments[0].click();", customerType);
+            Select se = new Select(customerType);
+
+            if (se.isMultiple()) {
+                Thread.sleep(10);
+                se.selectByValue("1");
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException("newsletter selection error " + e.getMessage());
         }
     }
+
     public void companyName(String companyname) {
         ldriver.findElement(txtCompanyname).sendKeys(companyname);
     }

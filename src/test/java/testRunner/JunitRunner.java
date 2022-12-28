@@ -11,8 +11,7 @@ import org.junit.runner.RunWith;
                 glue = "stepdefinitions",
                 dryRun = false,
                 monochrome = true,
-                plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-        )
+               plugin = {"pretty","html:test-output"})
 public class JunitRunner {
 
 }

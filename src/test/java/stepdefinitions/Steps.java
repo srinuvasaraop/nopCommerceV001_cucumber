@@ -116,8 +116,8 @@ public class Steps {
             addcustomerPage.gender("Female");
             addcustomerPage.setdateofbirth("15/5/1994");
             addcustomerPage.companyName("Essilor India private limited");
-            addcustomerPage.istaxecept("Yes");
-            addcustomerPage.newsLetter("Your store name'");
+           // addcustomerPage.istaxecept("Yes");
+            addcustomerPage.newsLetter("Your store name");
             addcustomerPage.setCustomerRoles("Administrators");
             addcustomerPage.selectVendor("Vendor 1");
             addcustomerPage.adminComments("this is new  admin working");

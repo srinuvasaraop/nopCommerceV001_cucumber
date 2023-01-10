@@ -6,12 +6,11 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
     public WebDriver ldriver;
 
     public LoginPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+super(rdriver);
     }
 
     @FindBy(id = "Email")

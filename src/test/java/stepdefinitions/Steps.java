@@ -2,23 +2,25 @@ package stepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.AddcustomerPage;
 import pageObjects.LoginPage;
+import pageObjects.SerachCustPage;
 
-public class Steps {
-    public WebDriver driver;
-    public LoginPage lp;
-    public AddcustomerPage addcustomerPage;
-
-    @Given("User Launch Chrome browser")
-    public void user_launch_chrome_browser() {
+public class Steps extends BaseClass {
+    public Steps() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         lp = new LoginPage(driver);
         addcustomerPage = new AddcustomerPage(driver);
+        serachCustPage = new SerachCustPage(driver);
+    }
+
+    @Given("User Launch Chrome browser")
+    public void user_launch_chrome_browser() {
+
+
     }
 
     @When("User Opens URL {string}")
@@ -114,11 +116,11 @@ public class Steps {
             addcustomerPage.firstName("srinivas");
             addcustomerPage.lastName("pandi");
             addcustomerPage.gender("Female");
-            addcustomerPage.setdateofbirth("15/5/1994");
+            addcustomerPage.setdateofbirth("15/07/1994");
             addcustomerPage.companyName("Essilor India private limited");
-           // addcustomerPage.istaxecept("Yes");
+            addcustomerPage.istaxecept("Yes");
             addcustomerPage.newsLetter("Your store name");
-            addcustomerPage.setCustomerRoles("Administrators");
+            addcustomerPage.setCustomerRoles("Guests ");
             addcustomerPage.selectVendor("Vendor 1");
             addcustomerPage.adminComments("this is new  admin working");
 
@@ -144,8 +146,39 @@ public class Steps {
 
     @Then("close browser")
     public void close_browser() {
-        driver.close();
+        // driver.close();
     }
 
+    //**************steps for searching customer by using Email Id*******//
+    @Then("User can view Customers dashboard")
+    public void user_can_view_customers_dashboard() {
+        // serachCustPage.searchmagnifier();
+    }
+
+
+    @When("User Enter Customer  EmailID {string}")
+    public void user_enter_customer_email_id(String email) {
+        serachCustPage.setEmail(email);
+    }
+
+    @When("User Click on search button")
+    public void user_click_on_search_button(){
+        try{
+            serachCustPage.searchButton();
+            Thread.sleep(5000);
+        }catch (Exception e)
+        {
+            System.out.println("serach button erro"+e.getMessage());
+        }
+
+
+    }
+
+
+    @Then("User Should found Email id in the search table {string}")
+    public void user_should_found_email_id_in_the_search_table(String email) {
+        boolean actual = serachCustPage.searchCustomerByemail(email);
+        Assert.assertTrue(actual);
+    }
 
 }

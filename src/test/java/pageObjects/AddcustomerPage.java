@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -13,12 +14,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.zip.DataFormatException;
 
-public class AddcustomerPage {
+public class AddcustomerPage extends BasePage {
     public WebDriver ldriver;
 
     public AddcustomerPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+        super(rdriver);
+        this.ldriver = rdriver;
     }
 
     public By Dashboard = By.xpath("//div[@class='content-header']/h1[contains(text(),'Dashboard')]");
@@ -34,7 +35,7 @@ public class AddcustomerPage {
     By rdFemaleGneder = By.id("Gender_Female");
 
     By txtDob = By.id("DateOfBirth");
-    By istax_except = By.id("//input[@id='IsTaxExempt']");
+    By istax_except = By.xpath("//input[@id='IsTaxExempt']");
     By txtCompanyname = By.id("Company");
 
     By txtCustomerRoles = By.id("SelectedCustomerRoleIds_taglist");        //*************rolles**********//
@@ -120,19 +121,20 @@ public class AddcustomerPage {
 
     public void newsLetter(String letter) {
         try {
-            JavascriptExecutor js = (JavascriptExecutor)ldriver;
-            By txtNewsletter = By.xpath("//div[@class='input-group']/descendant::select[@id='SelectedNewsletterSubscriptionStoreIds']");
+            Actions act = new Actions(ldriver);
+            By txtNewsletter = By.xpath(" //div[@class='input-group']/descendant::input[@aria-describedby='SelectedNewsletterSubscriptionStoreIds_taglist']");
+            By selNewsletter = By.xpath("//div[@class='input-group']/descendant::select[@id='SelectedNewsletterSubscriptionStoreIds']");
             WebElement customerType = ldriver.findElement(txtNewsletter);
-//            new WebDriverWait(ldriver, Duration.ofSeconds(60)).until(
-//                    ExpectedConditions.elementToBeClickable(customerType));
-//              customerType.click();
-            js.executeScript("arguments[0].click();", customerType);
-            Select se = new Select(customerType);
+            act.doubleClick(customerType).perform();
 
-            if (se.isMultiple()) {
-                Thread.sleep(10);
-                se.selectByValue("1");
-            }
+//            Select se = new Select(ldriver.findElement(selNewsletter));
+//
+//            if (se.isMultiple()) {
+//                Thread.sleep(10);
+//                se.selectByIndex(1);
+//            }
+            ldriver.findElement(By.xpath("//ul[@id='SelectedNewsletterSubscriptionStoreIds_listbox']/li[1]")).click();
+
 
         } catch (Exception e) {
             throw new RuntimeException("newsletter selection error " + e.getMessage());
@@ -144,10 +146,12 @@ public class AddcustomerPage {
     }
 
     public void selectVendor(String Vendro) {
-        ldriver.findElement(ManagerofVendor).click();
+        WebElement sele = ldriver.findElement(ManagerofVendor);
+        sele.click();
         try {
-            By listitemVendors = By.xpath("//select[@id='VendorId']/option[contains(text(),'" + Vendro + "')]");
-            ldriver.findElement(listitemVendors).click();
+            // By listitemVendors = By.xpath("//select[@id='VendorId']/option[contains(text(),'" + Vendro + "')]");
+            Select se = new Select(sele);
+            se.selectByVisibleText(Vendro);
         } catch (Exception e) {
             throw new RuntimeException("vendor not selected" + e.getMessage());
         }
@@ -162,9 +166,15 @@ public class AddcustomerPage {
     }
 
     public void setCustomerRoles(String roles) {
-        By AllRoles = By.xpath("//span[contains(text(),'" + roles + "')]");
+        Actions act = new Actions(ldriver);
+        By AllRoles = By.xpath("//ul[@id='SelectedCustomerRoleIds_listbox']/li[contains(text(),'" + roles + "')]");
         try {
+            WebElement ele = ldriver.findElement(By.xpath("//div[@role='listbox']/descendant::input[@aria-describedby='SelectedCustomerRoleIds_taglist']"));
+            act.doubleClick(ele).perform();
             ldriver.findElement(AllRoles).click();
+            //            Select objSelect = new Select(ldriver.findElement(By.xpath("//div[@class='input-group']/descendant::select[@id='SelectedCustomerRoleIds']")));
+//            objSelect.selectByValue("1");
+            // ldriver.findElement(AllRoles).click();
         } catch (RuntimeException re) {
             throw new RuntimeException("Customer Roles are not selected " + re.getMessage());
         }

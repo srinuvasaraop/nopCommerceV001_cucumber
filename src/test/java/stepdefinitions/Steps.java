@@ -16,11 +16,8 @@ public class Steps extends BaseClass {
 
     @Given("User Launch Chrome browser")
     public void user_launch_chrome_browser() {
-        logger= Logger.getLogger("nopcommerce");//added logger
+        logger = Logger.getLogger("nopcommerce");//added logger
         PropertyConfigurator.configure("log4j.properties");//added logger
-
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Drivers/chromedriver.exe");
-        driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Drivers/chromedriver.exe");
         driver = new ChromeDriver();
         logger.info("**********launching browser************");
@@ -131,7 +128,7 @@ public class Steps extends BaseClass {
         try {
             logger.info("********** Adding new Customer ************");
             logger.info("********** providing Customer  details ************");
-            String email=randomstring()+"@gmail.com";
+            String email = randomstring() + "@gmail.com";
             addcustomerPage.setEmail(email);
             addcustomerPage.setPassword("Paasword@6789");
             addcustomerPage.firstName("srinivas");
@@ -185,14 +182,13 @@ public class Steps extends BaseClass {
     }
 
     @When("User Click on search button")
-    public void user_click_on_search_button(){
-        try{
+    public void user_click_on_search_button() {
+        try {
             logger.info("********** Searching a new Customer ************");
             serachCustPage.searchButton();
             Thread.sleep(5000);
-        }catch (Exception e)
-        {
-            System.out.println("serach button erro"+e.getMessage());
+        } catch (Exception e) {
+            System.out.println("serach button erro" + e.getMessage());
         }
 
 

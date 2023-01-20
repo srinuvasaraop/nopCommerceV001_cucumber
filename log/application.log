@@ -86,3 +86,93 @@
 2023-01-19 08:51:57,390 [main] INFO nopcommerce - **********click on logiut link ************
 2023-01-19 08:52:31,543 [main] INFO nopcommerce - **********launching browser************
 2023-01-19 08:52:31,780 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 09:28:56,531 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 09:28:56,780 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 09:29:04,125 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 09:29:04,610 [main] INFO nopcommerce - **********started login ************
+2023-01-19 09:29:22,757 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 09:29:22,789 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-19 09:29:28,298 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 09:29:35,835 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 09:29:36,929 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 09:29:45,579 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 09:29:45,986 [main] INFO nopcommerce - **********started login ************
+2023-01-19 09:29:52,433 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 09:29:52,444 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-19 09:29:58,298 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 09:30:29,707 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 09:30:29,859 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 09:40:27,106 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 09:40:27,353 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 09:40:46,354 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 09:40:46,510 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 09:41:09,015 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 09:41:09,163 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 10:03:21,736 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 10:03:22,097 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 10:03:26,313 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 10:03:26,784 [main] INFO nopcommerce - **********started login ************
+2023-01-19 10:03:38,361 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 10:03:38,465 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-19 10:03:43,820 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 10:04:32,514 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 10:04:32,837 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 10:04:37,862 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 10:04:38,401 [main] INFO nopcommerce - **********started login ************
+2023-01-19 10:06:23,519 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 10:06:23,902 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 10:06:26,057 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 10:06:26,538 [main] INFO nopcommerce - **********started login ************
+2023-01-19 10:06:32,887 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 10:06:32,960 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-19 10:06:39,843 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 10:06:41,728 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 10:06:41,938 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 10:06:45,578 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 10:06:46,223 [main] INFO nopcommerce - **********started login ************
+2023-01-19 10:06:51,915 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 10:06:52,031 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-19 10:06:57,236 [main] INFO nopcommerce - **********log in failed ************
+2023-01-19 10:06:59,507 [main] INFO nopcommerce - **********launching browser************
+2023-01-19 10:06:59,708 [main] INFO nopcommerce - **********opening URL************
+2023-01-19 10:07:03,037 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-19 10:07:03,747 [main] INFO nopcommerce - **********started login ************
+2023-01-19 10:07:04,619 [main] INFO nopcommerce - **********log in passed ************
+2023-01-20 06:40:44,805 [main] INFO nopcommerce - **********launching browser************
+2023-01-20 06:40:45,200 [main] INFO nopcommerce - **********opening URL************
+2023-01-20 06:40:48,078 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-20 06:40:48,532 [main] INFO nopcommerce - **********started login ************
+2023-01-20 06:40:54,706 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:40:54,728 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-20 06:41:00,151 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:41:02,714 [main] INFO nopcommerce - **********launching browser************
+2023-01-20 06:41:03,007 [main] INFO nopcommerce - **********opening URL************
+2023-01-20 06:41:09,399 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-20 06:41:09,857 [main] INFO nopcommerce - **********started login ************
+2023-01-20 06:41:14,834 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:41:14,846 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-20 06:41:20,564 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:41:24,255 [main] INFO nopcommerce - **********launching browser************
+2023-01-20 06:41:24,423 [main] INFO nopcommerce - **********opening URL************
+2023-01-20 06:41:34,197 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-20 06:41:34,696 [main] INFO nopcommerce - **********started login ************
+2023-01-20 06:41:36,088 [main] INFO nopcommerce - **********log in passed ************
+2023-01-20 06:46:31,261 [main] INFO nopcommerce - **********launching browser************
+2023-01-20 06:46:31,519 [main] INFO nopcommerce - **********opening URL************
+2023-01-20 06:46:37,984 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-20 06:46:38,498 [main] INFO nopcommerce - **********started login ************
+2023-01-20 06:46:47,008 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:46:47,039 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-20 06:46:52,631 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:46:56,394 [main] INFO nopcommerce - **********launching browser************
+2023-01-20 06:46:56,574 [main] INFO nopcommerce - **********opening URL************
+2023-01-20 06:47:07,339 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-20 06:47:07,826 [main] INFO nopcommerce - **********started login ************
+2023-01-20 06:47:15,814 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:47:15,833 [main] INFO nopcommerce - **********click on logiut link ************
+2023-01-20 06:47:23,273 [main] INFO nopcommerce - **********log in failed ************
+2023-01-20 06:47:24,969 [main] INFO nopcommerce - **********launching browser************
+2023-01-20 06:47:25,128 [main] INFO nopcommerce - **********opening URL************
+2023-01-20 06:47:29,092 [main] INFO nopcommerce - **********providing login detaisl************
+2023-01-20 06:47:29,592 [main] INFO nopcommerce - **********started login ************
+2023-01-20 06:47:30,194 [main] INFO nopcommerce - **********log in passed ************

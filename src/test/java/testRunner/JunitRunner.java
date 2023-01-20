@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
                 glue = "stepdefinitions",
                 dryRun = false,
                 monochrome = true,
-               plugin = {"pretty","html:target-output/cucumber-report.html"}
+               plugin = {"pretty","html:target-output/cucumber-report.html"},
+                tags = "@sanityor"
         )
 public class JunitRunner {
 

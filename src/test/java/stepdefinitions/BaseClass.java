@@ -7,6 +7,8 @@ import pageObjects.AddcustomerPage;
 import pageObjects.LoginPage;
 import pageObjects.SerachCustPage;
 
+import java.util.Properties;
+
 
 public class BaseClass {
     public WebDriver driver;
@@ -14,6 +16,8 @@ public class BaseClass {
     public AddcustomerPage addcustomerPage;
     public SerachCustPage serachCustPage;
     public static Logger logger;
+
+    public Properties configprop;
 
     //created for geneating random string for unique email
     public static String randomstring() {

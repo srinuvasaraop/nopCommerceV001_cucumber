@@ -1,31 +1,46 @@
 package stepdefinitions;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pageObjects.AddcustomerPage;
 import pageObjects.LoginPage;
 import pageObjects.SerachCustPage;
 
-public class Steps extends BaseClass {
-    public Steps() {
+import java.io.FileInputStream;
+import java.util.Properties;
 
+public class Steps extends BaseClass {
+
+    @Before
+    public void setup() throws java.io.IOException {
+        logger = Logger.getLogger("nopcommerce");//added logger
+        PropertyConfigurator.configure("log4j.properties");//added logger
+        //Reading properties
+        configprop = new Properties();
+        FileInputStream fis = new FileInputStream("config.properties");
+        configprop.load(fis);
+
+        String browsr = configprop.getProperty("browser");
+        logger.info("opening browser is" + browsr);
+        if (browsr.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", configprop.getProperty("chromepath"));
+            logger.info("**********launching browser************");
+            driver = new ChromeDriver();
+        } else if (browsr.equals("firefox")) {
+            System.setProperty("webdriver.gecko.driver", configprop.getProperty("firefoxpath"));
+            logger.info("**********launching browser************");
+            driver = new FirefoxDriver();
+        }
+        driver.manage().window().maximize();
     }
 
     @Given("User Launch Chrome browser")
     public void user_launch_chrome_browser() {
-        logger = Logger.getLogger("nopcommerce");//added logger
-        PropertyConfigurator.configure("log4j.properties");//added logger
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        logger.info("**********launching browser************");
-        driver.manage().window().maximize();
-        lp = new LoginPage(driver);
-        addcustomerPage = new AddcustomerPage(driver);
-        serachCustPage = new SerachCustPage(driver);
-        driver.manage().window().maximize();
         lp = new LoginPage(driver);
         addcustomerPage = new AddcustomerPage(driver);
         serachCustPage = new SerachCustPage(driver);
